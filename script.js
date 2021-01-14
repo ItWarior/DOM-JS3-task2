@@ -821,22 +821,23 @@ let rules = [
                 <h2>Первое правило Бойцовского клуба.</h2>
                 <p>Никому не рассказывать о Бойцовском клубе.</p>
             </div> */
-// </div>        
+// </div>       
 let wrap = document.createElement("div");
 wrap.id = "wrap";
 document.body.appendChild(wrap);
 
-for (let i = 0; i < rules.length; i++) {
+for (const iterator of rules) {
+    
    let rules = document.createElement("div");
-   rules.className = `rules rule ${i + 1}`;
+   rules.className = `rules rule `;
    wrap.appendChild(rules);
 
    let h2 = document.createElement("h2");
-   h2.innerText = "Первое правило Бойцовского клуба.";
+   h2.innerText = iterator.title;
    rules.appendChild(h2);
 
    let p = document.createElement("p");
-   p.innerText = "Никому не рассказывать о Бойцовском клубе.";
+   p.innerText = iterator.body;
    rules.appendChild(p);
 }
 
